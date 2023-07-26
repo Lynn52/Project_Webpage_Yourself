@@ -1,0 +1,125 @@
+
+/* #1 Poppins 구글 폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* #2 전체 태그 초기화 및 초기 세팅 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* #3 button 기본 속성 초기화 */
+button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
+}
+
+/* #4 달력을 화면 가운데에 정렬 */
+.calendarbg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: darkcyan;
+}
+
+/* #5 달력 크기, 라운드, 배경 지정 */
+.wrapper {
+    background: #fff;
+    border-radius: 10px;
+    padding: 25px;
+    float: center;
+}
+
+/* #6 연도, 월 표시 및 이동 화살표 < > 배치 */
+.wrapper .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.wrapper .nav .current-date {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.wrapper .nav button {
+    width: 38px;
+    height: 38px;
+    font-size: 30px;
+    color: #878787;
+}
+
+/* #7 요일, 날짜 가로 배치 */
+.calendar ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.calendar .weeks li {
+    font-weight: 500;
+}
+.calendar .days {
+    margin-bottom: 20px;
+}
+.calendar ul li {
+    /* #8 요일, 날짜의 width 값을 calc()함수 이용하여 잡음 */
+    width: calc(100% / 7);
+    /* #9 오늘의 날짜 표시 위치 잡기 위함 */
+    position: relative;
+}
+.calendar .days li {
+    /* #10 오늘 날짜 표시 위해 li 요소들을 띄워줌 */
+    z-index: 1;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+/* #11 이전 달의 날짜 색상 다르게 적용 */
+.days li.inactive {
+    color: #aaa;
+}
+
+/* #12 오늘 날짜 표기 위한 가상 요소 */
+.days li.active {
+    color: #fff;
+}
+
+/* #13 .active 기준 위치 배치 */
+.calendar .days li::before {
+    position: absolute;
+    content: '';
+    height: 40px;
+    width: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+/* #14 날짜를 hover 했을 때의 배경색 변경 */
+.days li:hover::before {
+    background: #f2f2f2;
+}
+
+/* #15 오늘의 날짜 배경색은 포인터 컬러 색으로 변경 */
+.days li.active::before {
+    background: darkcyan;
+}
+
+/* #16 */
+.circle{
+    margin: 0 auto;
+    width: 1px;
+    height: 1px;
+    border: 8px solid;
+    border-radius: 50%;
+}
