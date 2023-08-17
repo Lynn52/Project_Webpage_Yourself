@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="naver_style.css" />
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" 
+    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
+</head>
+
+<body>
+  <div class="container">
+    <h1 style="color: grey;">Naver Login API 사용하기</h1>
+    <div class="login-area">
+        <img src="img/beaver_logo.png" width = "45" height = "35">
+        <span style="text-align: center; font-family: Rockwell; font-weight: bolder;">
+          <h1>Yoursel<i>f</i></h1>
+        </span>
+      <div id="message">
+        로그인 버튼을 눌러 로그인 해주세요.
+      </div>
+      <div id="button_area">
+        <div id="naverIdLogin"></div>
+      </div>
+    </div>
+  </div>
+  
+  <script type="text/javascript">
+    const naverLogin = new naver.LoginWithNaverId(
+   {
+    clientId: "VvpPUuQ0fc3bDdnwTR9a",
+    callbackUrl : "https://localhost/index_main",
+    loginButton: {color: "green", type: 2, height: 40},
+    }
+   );
+   
+    naverLogin.init();
+  </script>
+</body>
+</html>
