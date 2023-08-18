@@ -37,6 +37,17 @@
    );
    
     naverLogin.init();
+    naverLogin.get_naver_userprofile("naverSignInCallback()");
+  // 네이버 사용자 프로필 조회 이후 프로필 정보를 처리할 callback function
+    function naverSignInCallback() {
+      const email = naverLogin.getProfileData('email');
+      const nickname = naverLogin.getProfileData('nickname');
+      const name = naverLogin.getProfileData('name');
+      const age = naverLogin.getProfileData('age');
+      const gender = naverLogin.getProfileData('gender');
+      const birthday = naverLogin.getProfileData('birthday');
+      const mobile = naverLogin.getProfileData('mobile');
+    }
   </script>
 </body>
 </html>
